@@ -22,9 +22,6 @@ class UserController extends Controller
                 'password_confirmation' => 'required',
             ]);
 
-            //    $image = time().'.'.$request->image->extension();  
-            //    $request->image->move(public_path('images'), $image);
-
             $user = new User();
             $user->name         = $request->name;
             $user->email        = $request->email;

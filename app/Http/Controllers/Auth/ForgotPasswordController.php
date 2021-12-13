@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
@@ -46,7 +47,7 @@ class ForgotPasswordController extends Controller
 
         Mail::send('auth.verify',['token' => $token], function($message) use ($request) {
                   $message->from($request->email);
-                  $message->to('johanzjefta@gmail.com');
+                  $message->to('johanes.jefta@gmail.com');
                   $message->subject('Reset Password Notification');
                });
         Toastr::success('We have e-mailed your password reset link!','Success');
